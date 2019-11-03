@@ -19,6 +19,7 @@ import matplotlib.pyplot as plt
 haar_cascade_face = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 print('------------1------------')
 
+
 def convertToRGB(image):
     print('-----------4-------------')
     return cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
@@ -35,7 +36,7 @@ def detect_faces(cascade, test_image, scaleFactor = 1.1):
     faces_rect = cascade.detectMultiScale(gray_image, scaleFactor=scaleFactor, minNeighbors=5)
 
     for (x, y, w, h) in faces_rect:
-        cv2.rectangle(image_copy, (x, y), (x+w, y+h), (0, 255, 0), 15)
+        cv2.rectangle(image_copy, (x, y), (x+w, y+h), (0, 255, 0), 5)
 
     print('-----------3-------------')
     return image_copy
