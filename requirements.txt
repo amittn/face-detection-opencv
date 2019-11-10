@@ -1,4 +1,4 @@
 opencv-python
-imutils
+#imutils
 #for multiple bright spots
-scikit-image
+#scikit-image
