@@ -21,10 +21,10 @@ def detect_faces(cascade, test_image, scaleFactor = 1.3):
 
 if __name__ == "__main__":
     # loading image
-    test_image2 = cv2.imread('test11.jpg')
+    test_image = cv2.imread('football.jpg')
 
     # call the function to detect faces
-    return_image = detect_faces(haar_cascade_face, test_image2)
+    return_image = detect_faces(haar_cascade_face, test_image)
 
     cv2.imshow('Final', return_image)
     key = cv2.waitKey(0)
