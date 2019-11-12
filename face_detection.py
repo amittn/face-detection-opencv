@@ -1,4 +1,5 @@
 import cv2
+import argparse
 
 haar_cascade_face = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
@@ -19,9 +20,18 @@ def detect_faces(cascade, test_image, scaleFactor = 1.3):
     return image_copy
 
 
+def parse_arguments():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("-i", "--image", required=True, help="path to the image file")
+    args = vars(ap.parse_args())
+    return args
+
+
 if __name__ == "__main__":
+    args = parse_arguments()
+
     # loading image
-    test_image = cv2.imread('football.jpg')
+    test_image = cv2.imread(args['image'])
 
     # call the function to detect faces
     return_image = detect_faces(haar_cascade_face, test_image)
